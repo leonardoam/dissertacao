@@ -50,16 +50,16 @@
 % conter no máximo 500 palavras
 % conter no mínimo 1 e no máximo 5 palavras-chave
 \textoresumo[brazil]{
-    Este trabalho é um breve modelo  para a escrita de monografias de qualificação, dissertações e teses utilizando o ambiente \LaTeX, de acordo com as normas exigidas pelo Instituto de Ciências Matemáticas e de Computação (ICMC), da Universidade de São Paulo (USP). Para a confecção deste modelo foi utilizado a última versão (1.9.6) do pacote de classes \textit{abnTeX2} que segue as normas da Associação Brasileira de Normas Técnicas. A elaboração de uma monografia, dissertação ou tese pode ser feita sobrescrevendo o conteúdo deste modelo. 
-    }{Modelo, Monografia de qualificação, Dissertação, Tese, Latex}
+    Um resumo
+    }{Algumas, palavras, chave}
 
 
 % resumo em INGLÊS
 % conter no máximo 500 palavras
 % conter no mínimo 1 e no máximo 5 palavras-chave
 \textoresumo[english]{
-    This paper is a brief model for writing qualification monographs, dissertations and thesis using \LaTeX environment, in accordance with the standards required by the Institute of Mathematics and Computer Sciences (ICMC), University of São Paulo (USP). For making this model, the latest version (1.9.6) \textit{abnTeX2} classes package was used. This package follow the rules of the Brazilian Association of Technical Standards. A drafting a monograph, dissertation or thesis can be done by overwriting the contents of this model.
-    }{Template, Qualification monograph, Dissertation, Thesis, Latex}
+    A abstract
+    }{Some, keywords}
 
 
 % ----------------------------------------------------------
@@ -106,62 +106,39 @@
 
 \chapter{Introdução}
 \label{chapter:introducao}
-\input{tex/introducao}
+\input{tex/1-introducao}
 
 \chapter{Documentos Fiscais}
 \label{chapter:documenos-fiscais}
-\input{tex/documentos-fiscais}
+\input{tex/2-documentos-fiscais}
 
-\chapter{A Pandemia de Sars-Cov-2}
+\chapter{A Pandemia de Covid-19}
 \label{chapter:pandemia}
-\input{tex/pandemia}
+\input{tex/3-pandemia}
+
+\chapter{Redes Complexas}
+\label{chapter:redes}
+\input{tex/4-redes}
 
 \chapter{Base de Dados}
 \label{chapter:base-de-dados}
-\input{tex/base-de-dados}
+\input{tex/5-base-de-dados}
 
-\chapter{Caracterização de Redes Complexas}
-\label{chapter:caracterizacao-de-redes-complexas}
-\input{tex/caracterizacao-de-redes-complexas}
+\chapter{Crise Econômica}
+\label{chapter:crise-economica}
+\input{tex/6-crise-economica}
 
-\chapter{Amostragem de Redes Complexas}
-\label{chapter:amostragem-de-redes-complexas}
-\input{tex/amostragem-de-redes-complexas}
+\chapter{Métricas de redes}
+\label{chapter:metricas-redes}
+\input{tex/7-metricas-redes}
 
-% \chapter{Base de Dados}
-% \label{chapter:base-de-dados}
-% \input{tex/base-de-dados}
+\chapter{Resultados}
+\label{chapter:resultados}
+\input{tex/8-resultados}
 
-
-
-\chapter{Instalando o abnTeX2}
-\label{chapter:instalando-abntex}
-\input{tex/instalando-abntex}
-
-\chapter{Orientações gerais}
-\label{chapter:orientacoes-gerais}
-\input{tex/orientacoes-gerais}
-
-\chapter{Configuração dos elementos pré-textuais}
-\label{chapter:config-pre-textual}
-\input{tex/config-pre-textual}
-
-\chapter{Corpos flutuantes}
-\label{chapter:corpos-flutuantes}
-\input{tex/corpos-flutuantes}
-
-\chapter{Listas}
-\label{chapter:listas}
-\input{tex/listas}
-
-\chapter{Ferramentas úteis}
-\label{chapter:ferramentas-uteis}
-\input{tex/ferramentas-uteis}
-
-\chapter{Citações e referências}
-\label{chapter:citacoes}
-\input{tex/citacoes}
-
+\chapter{Conclusão}
+\label{chapter:conclusão}
+\input{tex/9-conclusao}
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -199,13 +176,17 @@
 % ---
 \begin{apendicesenv}
 
-    \chapter{Documento básico usando a classe \textit{icmc}}
-    \label{chapter:documento-basico}
-    \input{tex/appendix/documento-basico}
+    \chapter{Tecnologias Utilizadas}
+    \label{chapter:armazem-de-dados}
+    \input{tex/appendix/a-armazem-de-dados}
     
-    \chapter{Configuração do programa JabRef}
-    \label{chapter:configuracao-jabref}
-    \input{tex/appendix/configuracao-jabref}
+    \chapter{Tecnologias Utilizadas}
+    \label{chapter:tecnologias-utilizadas}
+    \input{tex/appendix/b-tecnologias-utilizadas}
+    
+    \chapter{Tecnologias Utilizadas}
+    \label{chapter:cfop}
+    \input{tex/appendix/c-cfop}
 
 \end{apendicesenv}
 % ---
@@ -220,9 +201,9 @@
 % ---
 \begin{anexosenv}
 
-    \chapter{Páginas interessantes na Internet} 
-    \label{chapter:paginas-interessantes}
-    \input{tex/annex/paginas-interessantes}
+    \chapter{Trabalhos Relacionados Relevantes}
+    \label{chapter:trabalhos-relevantes}
+    \input{tex/annex/a-trabalhos-relevantes}
 
 \end{anexosenv}
 % ---
