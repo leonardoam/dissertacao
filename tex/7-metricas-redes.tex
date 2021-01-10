@@ -1,71 +1,249 @@
 
+\section{Métricas por UF}
+
+\begin{table}[htb]
 \centering
-\begin{tabular}{lrrr}
+\caption{Métricas do grafo de transações entre UFs}
+\label{tab:metricas-redes:grafo-por-uf}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós &       27      \\
+    Quantidade de arestas &  377      \\
+    Grau médio &              27.9259 \\
+    Densidade &                1.0740 \\
+    Transitividade &           0.9971 \\
+    Assortatividade &         -0.0356 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre UFs segmentadas por UF (Parte 1)}
+\label{tab:metricas-redes:grafo-por-uf-especificas1}
+    \begin{tabular}{l|rrr}
+    \toprule
+    UF &  \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &  \textit{PageRank} \\
+    \midrule
+    AC &           45131679.9 &                  0.0016 &    0.0077 \\
+    AL &          115042520.7 &                  0.0057 &    0.0113 \\
+    AM &          233241856.5 &                  0.0714 &    0.0468 \\
+    AP &           55776545.2 &                  0.0017 &    0.0078 \\
+    BA &          216766251.0 &                  0.0539 &    0.0348 \\
+    CE &          181551108.5 &                  0.0199 &    0.0186 \\
+    DF &          183514648.1 &                  0.0291 &    0.0163 \\
+    ES &          224565597.2 &                  0.0801 &    0.0334 \\
+    GO &          224997805.0 &                  0.0635 &    0.0401 \\
+    MA &          146075047.1 &                  0.0094 &    0.0131 \\
+    MG &          239901173.8 &                  0.1696 &    0.0744 \\
+    MS &          175685967.3 &                  0.0249 &    0.0154 \\
+    MT &          185761972.8 &                  0.0219 &    0.0205 \\
+    PA &          190570929.6 &                  0.0262 &    0.0216 \\
+    PB &          158298342.0 &                  0.0124 &    0.0140 \\
+    PE &          214522950.8 &                  0.0340 &    0.0325 \\
+    PI &           94005154.8 &                  0.0040 &    0.0084 \\
+    PR &          237483211.9 &                  0.1416 &    0.0630 \\
+    RJ &          238840786.0 &                  0.1596 &    0.0659 \\
+    RN &          133036395.4 &                  0.0097 &    0.0125 \\
+    RO &          145448293.2 &                  0.0101 &    0.0139 \\
+    RR &           45167181.1 &                  0.0010 &    0.0067 \\
+    RS &          226835644.9 &                  0.0681 &    0.0416 \\
+    SC &          231721819.6 &                  0.0971 &    0.0475 \\
+    SE &           92297914.3 &                  0.0026 &    0.0091 \\
+    SP &          252900279.3 &                  0.9426 &    0.3101 \\
+    TO &          142287875.3 &                  0.0086 &    0.0128 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre UFs segmentadas por UF (Parte 2)}
+\label{tab:metricas-redes:grafo-por-uf-especificas2}
+    \begin{tabular}{l|rrrrr}
+    \toprule
+    UF &  Grau &  \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho\\mínimo médio} &  \shortstack{Centralidade\\de proximidade} \\
+    \midrule
+    AC &      27 &      1.000 &          21987342.7 &                0.963 \\
+    AL &      28 &      0.997 &          22558548.5 &                1.000 \\
+    AM &      28 &      0.997 &          49533633.1 &                1.000 \\
+    AP &      27 &      1.000 &          23609074.5 &                0.963 \\
+    BA &      28 &      0.997 &          25697016.4 &                1.000 \\
+    CE &      28 &      0.997 &          26571227.8 &                1.000 \\
+    DF &      28 &      0.997 &          27097074.9 &                1.000 \\
+    ES &      28 &      0.997 &          31427414.0 &                1.000 \\
+    GO &      28 &      0.997 &         114751857.2 &                1.000 \\
+    MA &      28 &      0.997 &          22103789.9 &                1.000 \\
+    MG &      28 &      0.997 &          66380736.2 &                1.000 \\
+    MS &      28 &      0.997 &          29153572.3 &                1.000 \\
+    MT &      28 &      0.997 &          30091242.5 &                1.000 \\
+    PA &      28 &      0.997 &          23835526.6 &                1.000 \\
+    PB &      28 &      0.997 &          27089276.9 &                1.000 \\
+    PE &      28 &      0.997 &          29457028.0 &                1.000 \\
+    PI &      28 &      0.997 &          22143343.4 &                1.000 \\
+    PR &      28 &      0.997 &          47799520.5 &                1.000 \\
+    RJ &      28 &      0.997 &          36306815.9 &                1.000 \\
+    RN &      28 &      0.997 &          22298193.4 &                1.000 \\
+    RO &      28 &      0.997 &          23564149.6 &                1.000 \\
+    RR &      28 &      0.997 &          22077287.1 &                1.000 \\
+    RS &      28 &      0.997 &          63066267.3 &                1.000 \\
+    SC &      28 &      0.997 &          61588440.8 &                1.000 \\
+    SE &      28 &      0.997 &          23866121.4 &                1.000 \\
+    SP &      28 &      0.997 &         222599316.9 &                1.000 \\
+    TO &      28 &      0.997 &          21992262.4 &                1.000 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\section{Métricas por Seção}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções}
+\label{tab:metricas-redes:grafo-por-secao}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós &       20      \\
+    Quantidade de arestas &  186      \\
+    Grau médio &              18.6 \\
+    Densidade &           0.9789 \\
+    Transitividade &      0.9618 \\
+    Assortatividade &    -0.1433 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções segmentadas por seção (Parte 1)}
+\label{tab:metricas-redes:grafo-por-secao-especificas1}
+    \begin{tabular}{l|rrr}
+    \toprule
+    Seção &  \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &  PageRank \\
+    \midrule
+    A &              39066.6 &                  0.0116 &    0.0132 \\
+    B &              39066.2 &                  0.0091 &    0.0133 \\
+    C &              39069.4 &                  0.6961 &    0.3633 \\
+    D &              39067.7 &                  0.0140 &    0.0457 \\
+    E &              39061.1 &                  0.0038 &    0.0093 \\
+    F &              39064.8 &                  0.0067 &    0.0110 \\
+    G &              39069.4 &                  0.7167 &    0.3954 \\
+    H &              39067.9 &                  0.0214 &    0.0172 \\
+    I &              39066.9 &                  0.0123 &    0.0144 \\
+    J &              39067.6 &                  0.0174 &    0.0169 \\
+    K &              39065.5 &                  0.0032 &    0.0147 \\
+    L &              38872.7 &                  0.0002 &    0.0076 \\
+    M &              39054.0 &                  0.0020 &    0.0091 \\
+    N &              39064.5 &                  0.0066 &    0.0105 \\
+    O &              39065.6 &                  0.0086 &    0.0113 \\
+    P &              39026.1 &                  0.0007 &    0.0079 \\
+    Q &              39067.6 &                  0.0177 &    0.0157 \\
+    R &              38807.9 &                  0.0001 &    0.0076 \\
+    S &              39051.1 &                  0.0016 &    0.0084 \\
+    T &               2057.8 &                  >0.0001 &    0.0075 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções segmentadas por seção (Parte 2)}
+\label{tab:metricas-redes:grafo-por-secao-especificas2}
+    \begin{tabular}{l|rrrrr}
+    \toprule
+    Seção &  Grau &  \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho\\mínimo médio} &  \shortstack{Centralidade\\de proximidade} \\
+    \midrule
+    A &      20 &      0.0006 &           3424646.7 &                0.9500 \\
+    B &      20 &      0.0007 &           3415915.9 &                0.9500 \\
+    C &      21 &      0.0047 &          18568715.2 &                1.0000 \\
+    D &      20 &      0.0010 &           3339193.1 &                0.9500 \\
+    E &      20 &      0.0003 &           3338920.1 &                0.9500 \\
+    F &      20 &      0.0006 &           3444471.9 &                0.9500 \\
+    G &      21 &      0.0048 &          18603059.3 &                1.0000 \\
+    H &      20 &      0.0010 &           3363003.6 &                0.9500 \\
+    I &      20 &      0.0009 &           3608172.0 &                0.9500 \\
+    J &      20 &      0.0009 &           3543071.3 &                0.9500 \\
+    K &      18 &      0.0005 &           3380241.0 &                0.8636 \\
+    L &      16 &      0.0001 &           3336862.2 &                0.7917 \\
+    M &      20 &      0.0003 &           3509248.4 &                0.9500 \\
+    N &      20 &      0.0005 &           3514311.2 &                0.9500 \\
+    O &      19 &      0.0005 &           3339130.1 &                0.9048 \\
+    P &      19 &      0.0001 &           3343227.7 &                0.9048 \\
+    Q &      20 &      0.0008 &           3336184.1 &                0.9500 \\
+    R &      16 &      >0.0001 &           3336068.1 &                0.8636 \\
+    S &      20 &      0.0002 &           3353632.5 &                0.9500 \\
+    T &       2 &      >0.0001 &          18575494.7 &                0.5278 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\section{Métricas por CNAE}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre CNAEs}
+\label{tab:metricas-redes:grafo-por-cnae}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós     &   1125      \\
+    Quantidade de arestas & 135620      \\
+    Grau médio            &    241.1022 \\
+    Densidade             &      0.5294 \\
+    Transitividade        &     -0.3449 \\
+    Assortatividade       &      0.2145 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre CNAEs segmentadas por CNAE (Parte 1)}
+\label{tab:metricas-redes:grafo-por-cnae-especificas1}
+\begin{tabular}{l|rrr}
 \toprule
-Estado &  \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &  PageRank \\
+Métrica & \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &  PageRank \\
 \midrule
-AC &             45131679.98 &                    0.00 &      0.01 \\
-AL &            115042520.71 &                    0.01 &      0.01 \\
-AM &            233241856.54 &                    0.07 &      0.05 \\
-BA &            216766251.08 &                    0.05 &      0.03 \\
-CE &            181551108.52 &                    0.02 &      0.02 \\
-DF &            183514648.20 &                    0.03 &      0.02 \\
-ES &            224565597.25 &                    0.08 &      0.03 \\
-GO &            224997805.04 &                    0.06 &      0.04 \\
-MA &            146075047.18 &                    0.01 &      0.01 \\
-MG &            239901173.87 &                    0.17 &      0.07 \\
-MS &            175685967.30 &                    0.02 &      0.02 \\
-MT &            185761972.87 &                    0.02 &      0.02 \\
-PA &            190570929.63 &                    0.03 &      0.02 \\
-PB &            158298342.08 &                    0.01 &      0.01 \\
-PE &            214522950.87 &                    0.03 &      0.03 \\
-PI &             94005154.87 &                    0.00 &      0.01 \\
-PR &            237483211.92 &                    0.14 &      0.06 \\
-RJ &            238840786.10 &                    0.16 &      0.07 \\
-RN &            133036395.40 &                    0.01 &      0.01 \\
-RO &            145448293.29 &                    0.01 &      0.01 \\
-RR &             45167181.17 &                    0.00 &      0.01 \\
-RS &            226835644.99 &                    0.07 &      0.04 \\
-SC &            231721819.65 &                    0.10 &      0.05 \\
-SE &             92297914.37 &                    0.00 &      0.01 \\
-SP &            252900279.35 &                    0.94 &      0.31 \\
-TO &            142287875.34 &                    0.01 &      0.01 \\
-AP &             55776545.28 &                    0.00 &      0.01 \\
+Média         &  225.9 &         0.0020 &  0.0009 \\
+Desvio Padrão &  47.49 &         0.0298 &  0.0021 \\
+Mínimo        & 0.4702 & $3.198e^{-12}$ &  0.0001 \\
+25º percentil &  235.5 & $3.452e^{-07}$ &  0.0001 \\
+50º percentil &  245.4 & $5.856e^{-06}$ &  0.0002 \\
+75º percentil &  246.3 & $7.721e^{-05}$ &  0.0007 \\
+Máximo        &  246.4 &         0.8161 &  0.0316 \\
 \bottomrule
 \end{tabular}
+\fdadospesquisa
+\end{table}
 
+\begin{table}[htb]
 \centering
-\begin{tabular}{llrrrr}
+\caption{Métricas do grafo de transações entre CNAEs segmentadas por CNAE (Parte 2)}
+\label{tab:metricas-redes:grafo-por-cnae-especificas2}
+\begin{tabular}{l|rrrr}
 \toprule
-Estado &  Grau &  \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho\\mínimo médio} &  \shortstack{Centralidade\\de proximidade} \\
+Métrica & Grau &  \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho\\mínimo médio} &  \shortstack{Centralidade\\de proximidade} \\
 \midrule
-AC &      27 &        1.00 &            21987342.79 &                  0.96 \\
-AL &      28 &        1.00 &            22558548.55 &                  1.00 \\
-AM &      28 &        1.00 &            49533633.12 &                  1.00 \\
-BA &      28 &        1.00 &            25697016.45 &                  1.00 \\
-CE &      28 &        1.00 &            26571227.81 &                  1.00 \\
-DF &      28 &        1.00 &            27097074.92 &                  1.00 \\
-ES &      28 &        1.00 &            31427414.04 &                  1.00 \\
-GO &      28 &        1.00 &           114751857.23 &                  1.00 \\
-MA &      28 &        1.00 &            22103789.98 &                  1.00 \\
-MG &      28 &        1.00 &            66380736.23 &                  1.00 \\
-MS &      28 &        1.00 &            29153572.36 &                  1.00 \\
-MT &      28 &        1.00 &            30091242.51 &                  1.00 \\
-PA &      28 &        1.00 &            23835526.64 &                  1.00 \\
-PB &      28 &        1.00 &            27089276.93 &                  1.00 \\
-PE &      28 &        1.00 &            29457028.05 &                  1.00 \\
-PI &      28 &        1.00 &            22143343.46 &                  1.00 \\
-PR &      28 &        1.00 &            47799520.55 &                  1.00 \\
-RJ &      28 &        1.00 &            36306815.92 &                  1.00 \\
-RN &      28 &        1.00 &            22298193.50 &                  1.00 \\
-RO &      28 &        1.00 &            23564149.61 &                  1.00 \\
-RR &      28 &        1.00 &            22077287.17 &                  1.00 \\
-RS &      28 &        1.00 &            63066267.34 &                  1.00 \\
-SC &      28 &        1.00 &            61588440.87 &                  1.00 \\
-SE &      28 &        1.00 &            23866121.47 &                  1.00 \\
-SP &      28 &        1.00 &           222599316.92 &                  1.00 \\
-TO &      28 &        1.00 &            21992262.43 &                  1.00 \\
-AP &      27 &        1.00 &            23609074.60 &                  0.96 \\
+Média         &   241.1 &   $1.471e^{-05}$ &  $3.06e^{+04}$  & 0.5598 \\
+Desvio Padrão &   213.7 &   $1.945e^{-05}$ &  $3.23e^{+05}$  & 0.0769 \\
+Mínimo        &       1 &                0 & $1.532e^{+04}$ & 0.3572 \\
+25º percentil &      66 &   $4.441e^{-06}$ & $1.534e^{+04}$ & 0.5086 \\
+50º percentil &     183 &   $9.605e^{-06}$ & $1.537e^{+04}$ & 0.5409 \\
+75º percentil &     365 &    $1.79e^{-05}$ & $1.543e^{+04}$ & 0.5947 \\
+Máximo        &    1009 &           0.0003 & $1.027e^{+07}$ & 0.9057 \\
 \bottomrule
 \end{tabular}
-
+\fdadospesquisa
+\end{table}
