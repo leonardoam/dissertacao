@@ -1,5 +1,5 @@
 
-Neste seção, descrevemos o possível impacto econômico da Pandemia de COVID-19, contextualizada no Capítulo~\ref{chapter:pandemia}, verificando mensalmente se o volume transacionado foi próximo ou não fo volume esperado.
+Neste seção, descrevemos o possível impacto econômico da Pandemia de COVID-19, contextualizada na Seção~\ref{introducao:pandemia}, verificando mensalmente se o volume transacionado foi próximo ou não no volume esperado.
 
 \section{Cenário geral}
 
@@ -9,7 +9,7 @@ Nessa seção, descrevemos os dados da base totalizados mensalmente de forma agr
 	\centering
     \caption{Valor total transacionado por mês no período analisado}
     \includegraphics[scale=0.7]{images/base-de-dados-18.1-valor-mensal-total.png}
-    \label{fig:pandemia:descritiva-18.1-valor-mensal-total}
+    \label{fig:pandemia:base-de-dados-18.1-valor-mensal-total}
     \fdadospesquisa
 \end{figure}
 
@@ -17,11 +17,11 @@ Nessa seção, descrevemos os dados da base totalizados mensalmente de forma agr
 	\centering
     \caption{Comparação do valor total transacionado por mês entre 2019 e 2020 (Parte 4)}
     \includegraphics[scale=0.7]{images/base-de-dados-19.1-comparacao-valor-mensal-total.png}
-    \label{fig:pandemia:descritiva-19.1-comparacao-valor-mensal-total}
+    \label{fig:pandemia:base-de-dados-19.1-comparacao-valor-mensal-total}
     \fdadospesquisa
 \end{figure}
 
-A Figura~\ref{fig:pandemia:descritiva-18.1-valor-mensal-total} mostra o valor total transacionado em cada mês entre janeiro de 2019 e outubro de 2020, onde é visível um menor valor transacionado principalmente em abril e maio de 2020.
+A Figura~\ref{fig:pandemia:base-de-dados-18.1-valor-mensal-total} mostra o valor total transacionado em cada mês entre janeiro de 2019 e outubro de 2020, onde é visível um menor valor transacionado principalmente em abril e maio de 2020.
 
 \begin{table}[htb]
 \centering
@@ -46,11 +46,11 @@ Outubro &    3.33\% \\
 \fdadospesquisa
 \end{table}
 
-A Figura~\ref{fig:pandemia:descritiva-19.1-comparacao-valor-mensal-total} mostra uma comparação dos valores mensais transacionados em 2020 em relação aos valores mensais de 2019. Verifica-se então que os meses de abril e maio tiveram um valor total transacionado menor no ano de 2020, cuja variação está descritos em detalhes na Tabela~\ref{tab:comparacao-valor-mensal-total}.
+A Figura~\ref{fig:pandemia:base-de-dados-19.1-comparacao-valor-mensal-total} mostra uma comparação dos valores mensais transacionados em 2020 em relação aos valores mensais de 2019. Verifica-se então que os meses de abril e maio tiveram um valor total transacionado menor no ano de 2020, cuja variação está descritos em detalhes na Tabela~\ref{tab:comparacao-valor-mensal-total}.
 
-Como descrito no Capítulo~\ref{chapter:pandemia}, os meses de março e abril marcam exatamente o início do isolamento e das quarentenas no Brasil, e a aparentemente o impacto econômico nesses momentos foi mais importante.
+Como descrito na Seção~\ref{introducao:pandemia}, os meses de março e abril marcam exatamente o início do isolamento e das quarentenas no Brasil, e a aparentemente o impacto econômico nesses momentos foi mais importante.
 
-Aplicando uma regressão linear a partir dos dados entre janeiro de 2019 e fevereiro de 2020 é possível obter uma da previsão de valor transacionado para os meses seguintes e então comparar com o valor obtido nos meses seguintes: A Figura~\ref{fig:pandemia:descritiva-18.2-valor-total-vs-previsao} mostra os valores obtidos em relação aos valores previstos, detalhados na Tabela~\ref{tab:pandemia:valor-total-vs-previsao}.
+Aplicando uma regressão linear a partir dos dados entre janeiro de 2019 e fevereiro de 2020 é possível obter uma da previsão de valor transacionado para os meses seguintes e então comparar com o valor obtido nos meses seguintes: A Figura~\ref{fig:pandemia:base-de-dados-18.2-valor-total-vs-previsao} mostra os valores obtidos em relação aos valores previstos, detalhados na Tabela~\ref{tab:pandemia:valor-total-vs-previsao}.
 
 A partir desses dados, é possível verificar que no período entre março e junho de 2020 o valor transacionado total foi menor que o previsto, verificando uma retomada posterior.
 
@@ -58,7 +58,7 @@ A partir desses dados, é possível verificar que no período entre março e jun
 	\centering
     \caption{Valor total transacionado por mês comparado com a previsão para o período analisado}
     \includegraphics[scale=0.7]{images/base-de-dados-18.2-valor-total-vs-previsao.png}
-    \label{fig:pandemia:descritiva-18.2-valor-total-vs-previsao}
+    \label{fig:pandemia:base-de-dados-18.2-valor-total-vs-previsao}
     \fdadospesquisa
 \end{figure}
 
@@ -90,7 +90,15 @@ Outubro &    3.46\% \\ \hline
 	\centering
     \caption{Valor total transacionado por região no período analisado}
     \includegraphics[scale=0.7]{images/base-de-dados-11.1-valor-total-por-regiao.png}
-    \label{fig:pandemia:descritiva-11.1-valor-total-por-regiao}
+    \label{fig:pandemia:base-de-dados-11.1-valor-total-por-regiao}
+    \fdadospesquisa
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+    \caption{Valor trimestral transacionado por região no período analisado}
+    \includegraphics[scale=0.7]{images/base-de-dados-21.1-valor-trimestral-por-regiao.png}
+    \label{fig:pandemia:base-de-dados-21.1-valor-trimestral-por-regiao}
     \fdadospesquisa
 \end{figure}
 
@@ -137,31 +145,31 @@ Outubro &    3.46\% \\ \hline
 \begin{figure}[htb] 
     \centering 
     \caption{Comparação do valor mensal transacionado por região entre 2019 e 2020}
-    \label{fig:pandemia:descritiva-13-comparacao-valor-total-por-regiao} 
+    \label{fig:pandemia:base-de-dados-13-comparacao-valor-total-por-regiao} 
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale=0.45]{images/base-de-dados-13.1-comparacao-valor-total-por-regiao.png}
         \caption{Região 1}
-        \label{fig:pandemia:descritiva-13.1-comparacao-valor-total-por-regiao}
+        \label{fig:pandemia:base-de-dados-13.1-comparacao-valor-total-por-regiao}
     \end{subfigure} ~ \quad
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale=0.45]{images/base-de-dados-13.2-comparacao-valor-total-por-regiao.png}
         \caption{Região 2}
-        \label{fig:pandemia:descritiva-13.2-comparacao-valor-total-por-regiao}
+        \label{fig:pandemia:base-de-dados-13.2-comparacao-valor-total-por-regiao}
     \end{subfigure} ~ \\
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale=0.45]{images/base-de-dados-13.3-comparacao-valor-total-por-regiao.png}
         \caption{Região 3}
-        \label{fig:pandemia:descritiva-13.3-comparacao-valor-total-por-regiao}
+        \label{fig:pandemia:base-de-dados-13.3-comparacao-valor-total-por-regiao}
     \end{subfigure} ~ \quad
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[scale=0.45]{images/base-de-dados-13.4-comparacao-valor-total-por-regiao.png}
         \caption{Região 4}
-        \label{fig:pandemia:descritiva-13.4-comparacao-valor-total-por-regiao}
+        \label{fig:pandemia:base-de-dados-13.4-comparacao-valor-total-por-regiao}
     \end{subfigure} ~ \\
     \begin{subfigure}[b]{0.45\textwidth} 
         \includegraphics[scale=0.45]{images/base-de-dados-13.5-comparacao-valor-total-por-regiao.png}
         \caption{Região 5}
-        \label{fig:pandemia:descritiva-13.5-comparacao-valor-total-por-regiao}
+        \label{fig:pandemia:base-de-dados-13.5-comparacao-valor-total-por-regiao}
     \end{subfigure}
     \fdadospesquisa
 \end{figure}
@@ -170,7 +178,15 @@ Outubro &    3.46\% \\ \hline
 	\centering
     \caption{Valor total transacionado por UF no período analisado}
     \includegraphics[scale=0.7]{images/base-de-dados-14.1-valor-total-por-uf.png}
-    \label{fig:pandemia:descritiva-14.1-valor-total-por-uf}
+    \label{fig:pandemia:base-de-dados-14.1-valor-total-por-uf}
+    \fdadospesquisa
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+    \caption{Valor trimestral transacionado por UF no período analisado}
+    \includegraphics[scale=0.7]{images/base-de-dados-21.2-valor-trimestral-por-uf.png}
+    \label{fig:pandemia:base-de-dados-21.2-valor-trimestral-por-uf}
     \fdadospesquisa
 \end{figure}
 
@@ -276,7 +292,15 @@ Outubro &    3.46\% \\ \hline
 	\centering
     \caption{Valor total transacionado por seção no período analisado}
     \includegraphics[scale=0.7]{images/base-de-dados-15.1-valor-total-por-secao.png}
-    \label{fig:pandemia:descritiva-15.1-valor-total-por-secao}
+    \label{fig:pandemia:base-de-dados-15.1-valor-total-por-secao}
+    \fdadospesquisa
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+    \caption{Valor trimestral transacionado por seção no período analisado}
+    \includegraphics[scale=0.7]{images/base-de-dados-22-valor-trimestral-por-secao.png}
+    \label{fig:pandemia:base-de-dados-22-valor-trimestral-por-secao}
     \fdadospesquisa
 \end{figure}
 
@@ -360,6 +384,22 @@ Outubro &    3.46\% \\ \hline
     \end{tabular}
 \fdadospesquisa
 \end{table}
+
+\begin{figure}[htb]
+	\centering
+    \caption{Histograma do valor total transacionado por CNAE no período analisado}
+    \includegraphics[scale=0.7]{images/base-de-dados-23.1-valor-total-por-cnae.png}
+    \label{fig:pandemia:base-de-dados-23.1-valor-total-por-cnae}
+    \fdadospesquisa
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+    \caption{Diagrama de caixa dos valores mensais transacionados por CNAE no período analisado}
+    \includegraphics[scale=0.7]{images/base-de-dados-23.2-valor-mensal-por-cnae.png}
+    \label{fig:pandemia:base-de-dados-23.2-valor-mensal-por-cnae}
+    \fdadospesquisa
+\end{figure}
 
 \begin{table}[htb]
 \centering
