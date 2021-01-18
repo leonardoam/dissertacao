@@ -1,5 +1,258 @@
 
-\section{Grafos UF}
+Neste capítulo, serão apresentados os dados 
+
+\section{Caracterização de redes}
+\label{section:metricas-redes}
+
+\subsection{Redes UF-UF}
+
+Neste capítulo, faremos uma caracterização dos dados a partir de diferentes modelagems utilizando redes complexas.
+
+\subsection{Redes UF-UF}
+\label{section:metricas-redes:uf}
+
+Nesta seção, será apresentada a caracterização de uma rede entre unidades federativas brasileiras. Essa rede foi montada utilizando os dados de transações entre janeiro de 2019 e dezembro de 2019. Cada vértice representa uma UF e cada aresta representa o valor total transacionado no período entre duas UFs. Nesta modelagem consideramos um grafo não-direcionado cíclico. Cada vértice possui um atributo chamado \textbf{região} indicando a região a que pertence aquela UF. Cada aresta além do atributo contendo o valor total transacional, e um atributo chamado \textbf{distância} correspondente ao inverso do valor total transacionado. A Tabela~\ref{tab:metricas-redes:grafo-por-uf} apresenta as métricas do grafo para modelagem.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre UFs}
+\label{tab:metricas-redes:grafo-por-uf}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós         &  27      \\
+    Quantidade de arestas     & 377      \\
+    Diâmetro                  &   2      \\
+    Raio                      &   1      \\
+    Grau médio                &  26.9259 \\
+    Densidade                 &   1.0740 \\
+    Transitividade            &   0.9971 \\
+    Assortatividade de grau   &  -0.0356 \\
+    Assortatividade de região &  -0.0025 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+É possível notar que o grafo entre UFs é quase completo, existindo arestas entre todas as UFs com uma exceção: o estado do Acre não possui conexão com o estado do Amapá. Por conta disso, temos um grafo de alta densidade e transitividade, e baixa assortatividade de grau e de região. A Tabela~\ref{tab:metricas-redes:grafo-por-cnae-especificas1} nos dá uma ideia melhor da topologia do grafo. Para essas métricas foi considerada a formulação usando arestas ponderadas. Para os caminhos mínimos, foi utilizada a distância entre UFs.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre UFs segmentadas por UF}
+\label{tab:metricas-redes:grafo-por-uf-especificas1}
+    \begin{tabular}{l|rrrrrr}
+    \toprule
+    UF & Grau & \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho mínimo\\ médio poderado} & \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &  \textit{PageRank} \\
+    \midrule
+    AC & 26 & 0.0003 & $2.61e^{-09}$ & $4.51e^{+07}$ & 0.0016 & 0.0077 \\
+    AL & 27 & 0.0008 & $1.07e^{-09}$ & $1.15e^{+08}$ & 0.0057 & 0.0112 \\
+    AM & 27 & 0.0045 & $5.06e^{-10}$ & $2.33e^{+08}$ & 0.0714 & 0.0468 \\
+    AP & 26 & 0.0005 & $2.66e^{-09}$ & $5.57e^{+07}$ & 0.0016 & 0.0077 \\
+    BA & 27 & 0.0030 & $5.27e^{-10}$ & $2.16e^{+08}$ & 0.0538 & 0.0348 \\
+    CE & 27 & 0.0019 & $6.39e^{-10}$ & $1.81e^{+08}$ & 0.0199 & 0.0185 \\
+    DF & 27 & 0.0015 & $5.74e^{-10}$ & $1.83e^{+08}$ & 0.0290 & 0.0162 \\
+    ES & 27 & 0.0033 & $5.03e^{-10}$ & $2.24e^{+08}$ & 0.0801 & 0.0334 \\
+    GO & 27 & 0.0037 & $5.17e^{-10}$ & $2.25e^{+08}$ & 0.0634 & 0.0401 \\
+    MA & 27 & 0.0012 & $8.34e^{-10}$ & $1.46e^{+08}$ & 0.0093 & 0.0131 \\
+    MG & 27 & 0.0054 & $4.82e^{-10}$ & $2.39e^{+08}$ & 0.1696 & 0.0744 \\
+    MS & 27 & 0.0015 & $5.96e^{-10}$ & $1.75e^{+08}$ & 0.0249 & 0.0153 \\
+    MT & 27 & 0.0019 & $6.21e^{-10}$ & $1.85e^{+08}$ & 0.0219 & 0.0204 \\
+    PA & 27 & 0.0021 & $5.89e^{-10}$ & $1.90e^{+08}$ & 0.0261 & 0.0216 \\
+    PB & 27 & 0.0014 & $7.46e^{-10}$ & $1.58e^{+08}$ & 0.0124 & 0.0140 \\
+    PE & 27 & 0.0029 & $5.59e^{-10}$ & $2.14e^{+08}$ & 0.0339 & 0.0325 \\
+    PI & 27 & 0.0007 & $1.37e^{-09}$ & $9.40e^{+07}$ & 0.0039 & 0.0084 \\
+    PR & 27 & 0.0049 & $4.85e^{-10}$ & $2.37e^{+08}$ & 0.1416 & 0.0630 \\
+    RJ & 27 & 0.0051 & $4.82e^{-10}$ & $2.38e^{+08}$ & 0.1596 & 0.0659 \\
+    RN & 27 & 0.0011 & $8.10e^{-10}$ & $1.33e^{+08}$ & 0.0097 & 0.0125 \\
+    RO & 27 & 0.0010 & $8.09e^{-10}$ & $1.45e^{+08}$ & 0.0100 & 0.0138 \\
+    RR & 27 & 0.0003 & $1.83e^{-09}$ & $4.51e^{+07}$ & 0.0009 & 0.0067 \\
+    RS & 27 & 0.0038 & $5.16e^{-10}$ & $2.26e^{+08}$ & 0.0680 & 0.0416 \\
+    SC & 27 & 0.0042 & $4.97e^{-10}$ & $2.31e^{+08}$ & 0.0971 & 0.0474 \\
+    SE & 27 & 0.0006 & $1.64e^{-09}$ & $9.23e^{+07}$ & 0.0025 & 0.0091 \\
+    SP & 27 & 0.0119 & $4.59e^{-10}$ & $2.52e^{+08}$ & 0.9426 & 0.3101 \\
+    TO & 27 & 0.0011 & $8.96e^{-10}$ & $1.42e^{+08}$ & 0.0085 & 0.0127 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+O estado de Sâo Paulo se sobressai com maiores valores de coeficiente de agrupamento, centralidade de autovalor, e pagerank. Isso provavelmente se deve ao maior valor transacionado entre este estado e todos os outros, uma vez que o estado é conhecido por ser peça importante no cenário econômico brasileiro. Observando outros estados da região sudeste, como Rio de Janeiro de Minas Gerais, estes também tem valores importantes para essas métricas. Sendo assim, apesar de uma topologia simples ela se mostra razoavelmente eficaz em mostrar a importância de cada estado em relação às relações econômicas entre UFs brasileiras.
+
+Nesta análise, não consideramos as métricas de centralidade de intermediação, caminho mínimo médio, e excentricidade, uma vez que o grafo é quase completo e essas medidas refletiriam apenas o grau de cada vértice.
+
+\subsection{Redes Seção-Seção}
+\label{section:metricas-redes:secao}
+
+Nesta seção, será apresentada a caracterização de uma rede entre seções de CNAE. Essa rede foi montada utilizando os dados de transações entre janeiro de 2019 e dezembro de 2019, como anteriormente. Cada vértice representa uma seção e cada aresta representa o valor total transacionado no período entre duas seções. Nesta modelagem consideramos um grafo não-direcionado cíclico. Cada aresta além do atributo contendo o valor total transacional, e um atributo chamado \textbf{distância} correspondente ao inverso do valor total transacionado. A Tabela~\ref{tab:metricas-redes:grafo-por-secao} apresenta as métricas do grafo para modelagem.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções}
+\label{tab:metricas-redes:grafo-por-secao}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós       &   20      \\
+    Quantidade de arestas   &  186      \\
+    Diâmetro                &    2      \\
+    Raio                    &    1      \\
+    Grau médio              &   17.6000 \\
+    Densidade               &    0.9789 \\
+    Transitividade          &    0.9618 \\
+    Assortatividade de grau &   -0.1433 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+Podemos observar que este grafo não é tão completo quanto o anterior mas também é bastante completo, tendo altos valores de grau médio, densidade, e transitividade, assim como baixos valores de raio e diâmetro. A assortatividade de grau indica leve tendência à assortatividade negativa, porém dada a topologia da rede já é algo também esperado uma vez que a rede é bastante conectada mas existe alguma variância entre os graus de cada vértice como veremos.
+
+As Tabelas~\ref{tab:metricas-redes:grafo-por-secao-especificas1} e \ref{tab:metricas-redes:grafo-por-secao-especificas2} detalham as métricas agora por seção, sendo novamente considerada a formulação usando arestas ponderadas. Para os caminhos mínimos ponderados, foi utilizada a distância entre seções.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções segmentadas por seção (Parte 1)}
+\label{tab:metricas-redes:grafo-por-secao-especificas1}
+    \begin{tabular}{l|rrrr}
+    \toprule
+    Seção &  Grau &  \shortstack{Coeficiente\\de agrupamento} &  \shortstack{Caminho\\mínimo médio} &  \shortstack{Caminho mínimo\\médio ponderado} \\
+    \midrule
+    A &  19 &          0.0006 &     1 &  $1.635e^{-06}$ \\
+    B &  19 &          0.0007 &     1 &  $1.635e^{-06}$ \\
+    C &  20 &          0.0047 &  0.95 &  $1.634e^{-06}$ \\
+    D &  19 &          0.0010 &     1 &  $1.634e^{-06}$ \\
+    E &  19 &          0.0003 &     1 &  $1.635e^{-06}$ \\
+    F &  19 &          0.0005 &     1 &  $1.635e^{-06}$ \\
+    G &  20 &          0.0048 &  0.95 &  $1.634e^{-06}$ \\
+    H &  19 &          0.0010 &     1 &  $1.634e^{-06}$ \\
+    I &  19 &          0.0008 &     1 &  $1.634e^{-06}$ \\
+    J &  19 &          0.0009 &     1 &  $1.634e^{-06}$ \\
+    K &  17 &          0.0005 &   1.1 &  $1.635e^{-06}$ \\
+    L &  15 &  $7.119e^{-05}$ &   1.2 &  $1.648e^{-06}$ \\
+    M &  19 &          0.0002 &     1 &  $1.635e^{-06}$ \\
+    N &  19 &          0.0005 &     1 &  $1.635e^{-06}$ \\
+    O &  18 &          0.0005 &  1.05 &  $1.634e^{-06}$ \\
+    P &  18 &          0.0001 &  1.05 &  $1.637e^{-06}$ \\
+    Q &  19 &          0.0008 &     1 &  $1.634e^{-06}$ \\
+    R &  15 &  $4.308e^{-05}$ &   1.1 &  $1.646e^{-06}$ \\
+    S &  19 &          0.0002 &     1 &  $1.635e^{-06}$ \\
+    T &   1 &  $1.285e^{-05}$ &   1.8 &  $3.102e^{-05}$ \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+Podemos observar que assim como anteriormente, as seções C e G se sobressaem com altos valores de agrupamento e centralidade, indicando influencia dos altos valores transacionados por essas seções com outras regiões. A seção T se sobressai com uma baixa conectividade com outras seções, e as seções L e R são bastante influenciadas pelos baixos valores transacionados.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre seções segmentadas por seção (Parte 2)}
+\label{tab:metricas-redes:grafo-por-secao-especificas2}
+    \begin{tabular}{l|rrrrr}
+    \toprule
+    Seção & \shortstack{Centralidade\\de informação} &  \shortstack{Centralidade\\de autovalor} &   \shortstack{Centralidade\\de intermediação} & \shortstack{Centralidade\\de proximidade} & PageRank \\
+    \midrule
+    A & $3.907e^{+04}$ &  0.0116 &  0.0020 &  0.95 &  0.0131 \\
+    B & $3.907e^{+04}$ &  0.0090 &  0.0020 &  0.95 &  0.0132 \\
+    C & $3.907e^{+04}$ &  0.6961 &  0.0517 &  1    &  0.3633 \\
+    D & $3.907e^{+04}$ &  0.0139 &  0.0020 &  0.95 &  0.0457 \\
+    E & $3.906e^{+04}$ &  0.0038 &  0.0020 &  0.95 &  0.0093 \\
+    F & $3.906e^{+04}$ &  0.0067 &  0.0020 &  0.95 &  0.0110 \\
+    G & $3.907e^{+04}$ &  0.7167 &  0.0517 &  1    &  0.3954 \\
+    H & $3.907e^{+04}$ &  0.0213 &  0.0020 &  0.95 &  0.0171 \\
+    I & $3.907e^{+04}$ &  0.0123 &  0.0020 &  0.95 &  0.0143 \\
+    J & $3.907e^{+04}$ &  0.0173 &  0.0020 &  0.95 &  0.0169 \\
+    K & $3.907e^{+04}$ &  0.0032 &  0      &  0.86 &  0.0147 \\
+    L & $3.887e^{+04}$ &  0.0001 &  0      &  0.79 &  0.0075 \\
+    M & $3.905e^{+04}$ &  0.0020 &  0.0020 &  0.95 &  0.0090 \\
+    N & $3.906e^{+04}$ &  0.0066 &  0.0020 &  0.95 &  0.0105 \\
+    O & $3.907e^{+04}$ &  0.0085 &  0.0003 &  0.90 &  0.0113 \\
+    P & $3.903e^{+04}$ &  0.0006 &  0.0003 &  0.90 &  0.0078 \\
+    Q & $3.907e^{+04}$ &  0.0177 &  0.0020 &  0.95 &  0.0156 \\
+    R & $3.881e^{+04}$ &  0.0001 &  0      &  0.86 &  0.0075 \\
+    S & $3.905e^{+04}$ &  0.0016 &  0.0020 &  0.95 &  0.0084 \\
+    T & $2.058e^{+03}$ &  4.826e &  0      &  0.53 &  0.0075 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+\subsection{Redes CNAE-CNAE}
+\label{section:metricas-redes:cnae}
+
+Nesta seção, vamos repetir a análise agora para a caracterização de uma rede entre CNAEs. Essa rede foi montada utilizando os dados de transações entre janeiro de 2019 e dezembro de 2019. Cada vértice representa um CNAE e cada aresta representa o valor total transacionado no período entre dois CNAEs. Nesta modelagem consideramos um grafo não-direcionado cíclico. Cada vértice possui um atributo chamado \textbf{seção} indicando a seção a que pertence aquele CNAE. Cada aresta além do atributo contendo o valor total transacional, e um atributo chamado \textbf{distância} correspondente ao inverso do valor total transacionado. A Tabela~\ref{tab:metricas-redes:grafo-por-cnae} apresenta as métricas do grafo para modelagem.
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre CNAEs}
+\label{tab:metricas-redes:grafo-por-cnae}
+    \begin{tabular}{l|r}
+    \toprule
+    Métrica &  Valor \\
+    \midrule
+    Quantidade de nós         &   1125      \\
+    Quantidade de arestas     & 135607      \\
+    Diâmetro                  &      4      \\
+    Raio                      &      2      \\
+    Grau médio                &    241.0791 \\
+    Densidade                 &      0.2145 \\
+    Transitividade            &      0.5293 \\
+    Assortatividade de grau   &     -0.3449 \\
+    Assortatividade de seção &      0.0015 \\
+    \bottomrule
+    \end{tabular}
+\fdadospesquisa
+\end{table}
+
+
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre CNAEs segmentadas por CNAE (Parte 1)}
+\label{tab:metricas-redes:grafo-por-cnae-especificas1}
+\begin{tabular}{l|rrrrr}
+\toprule
+Métrica & Grau & \shortstack{Coeficiente\\de agrupamento} & Excentricidade & \shortstack{Caminho\\mínimo médio} & \shortstack{Caminho mínimo\\médio ponderado} \\
+\midrule
+Média         &  241.1 &   $1.471e^{-05}$ & 2.917 & 1.8160 & $1.140e^{-05}$ \\
+Desvio Padrão &  213.7 &   $1.946e^{-05}$ & 0.309 & 0.2289 & $6.641e^{-05}$ \\
+Mínimo        &    1   &                0 &     2 & 1.1030 & $5.708e^{-06}$ \\
+25º percentil &   66   &   $4.441e^{-06}$ &     3 & 1.6800 & $5.722e^{-06}$ \\
+50º percentil &  183   &   $9.605e^{-06}$ &     3 & 1.8470 & $5.776e^{-06}$ \\
+75º percentil &  365   &   $1.790e^{-05}$ &     3 & 1.9640 & $6.351e^{-06}$ \\
+Máximo        & 1009   &           0.0003 &     4 & 2.7970 &         0.0019 \\
+\bottomrule
+\end{tabular}
+\fdadospesquisa
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Métricas do grafo de transações entre CNAEs segmentadas por CNAE (Parte 2)}
+\label{tab:metricas-redes:grafo-por-cnae-especificas2}
+\begin{tabular}{l|rrrrr}
+\toprule
+Métrica & \shortstack{Centralidade\\de informação} & \shortstack{Centralidade\\de autovalor} & \shortstack{Centralidade de\\intermediação} & \shortstack{Centralidade\\de proximidade} & PageRank \\
+\midrule
+Média         & 225.9    &         0.0020 &         0.0007 & 0.5598 & 0.0008 \\
+Desvio Padrão &  47.49   &         0.0298 &         0.0019 & 0.0769 & 0.0021 \\
+Mínimo        &   0.4702 & $3.198e^{-12}$ &              0 & 0.3572 & 0.0001 \\
+25º percentil & 235.5    & $3.452e^{-07}$ & $3.047e^{-06}$ & 0.5086 & 0.0001 \\
+50º percentil & 245.4    & $5.856e^{-06}$ & $5.415e^{-05}$ & 0.5409 & 0.0002 \\
+75º percentil & 246.3    & $7.721e^{-05}$ &         0.0005 & 0.5947 & 0.0007 \\
+Máximo        & 46.4     &         0.8161 &         0.0287 & 0.9057 & 0.0316 \\
+\bottomrule
+\end{tabular}
+\fdadospesquisa
+\end{table}
+
+\section{Alterações topológicas}
+\label{section:alteracoes-topologicas}
+
+\subsection{Redes UF-UF}
+\label{section:alteracoes-topologicas:uf}
 
 \begin{table}[htb]
 \centering
@@ -126,7 +379,8 @@ PageRank                       & -0.63\% &   0.02\% &   4.37\% & -1.23\% & -1.61
 \fdadospesquisa
 \end{table}
 
-\section{Grafos Seção}
+\subsection{Redes Seção-Seção}
+\label{section:alteracoes-topologicas:secao}
 
 \begin{table}[htb]
 \centering
@@ -253,7 +507,8 @@ PageRank                       &  0.07\% & -0.04\% & 0.17\% & 0.07\% &  0.08\% &
 \fdadospesquisa
 \end{table}
 
-\section{Grafos CNAE}
+\subsection{Redes CNAE-CNAE}
+\label{section:alteracoes-topologicas:cnae}
 
 \begin{table}[htb]
 \centering
@@ -380,7 +635,11 @@ PageRank                       &  0.07\% & -0.04\% & 0.17\% & 0.07\% &  0.08\% &
 \fdadospesquisa
 \end{table}
 
-\section{Classificação UF}
+\section{Detecção de impacto econômico}
+\label{section:deteccao-impacto}
+
+\subsection{Dados de UFs}
+\label{section:deteccao-impacto:uf}
 
 \begin{figure}[htb] 
     \centering 
@@ -416,7 +675,8 @@ PageRank                       &  0.07\% & -0.04\% & 0.17\% & 0.07\% &  0.08\% &
     \fdadospesquisa
 \end{figure}
 
-\section{Classificação Seção}
+\subsection{Dados de Seções}
+\label{section:deteccao-impacto:secao}
 
 \begin{figure}[htb] 
     \centering 
@@ -452,7 +712,8 @@ PageRank                       &  0.07\% & -0.04\% & 0.17\% & 0.07\% &  0.08\% &
     \fdadospesquisa
 \end{figure}
 
-\section{Classificação CNAE}
+\subsection{Dados de CNAEs}
+\label{section:deteccao-impacto:cnae}
 
 \begin{figure}[htb] 
     \centering 
@@ -587,3 +848,6 @@ PageRank                       &  0.07\% & -0.04\% & 0.17\% & 0.07\% &  0.08\% &
     \end{subfigure} ~ \\
     \fdadospesquisa
 \end{figure}
+
+\section{Conclusões}
+\label{section:resultados:conclusoes}

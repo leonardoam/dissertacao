@@ -1,7 +1,8 @@
 
-Neste seção, descrevemos o possível impacto econômico da Pandemia de COVID-19, contextualizada na Seção~\ref{introducao:pandemia}, verificando mensalmente se o volume transacionado foi próximo ou não no volume esperado.
+Neste seção, será descrito o possível impacto econômico da Pandemia de COVID-19, contextualizada na Seção~\ref{introducao:pandemia}, verificando mensalmente se o volume transacionado foi próximo ou não no volume esperado.
 
 \section{Cenário geral}
+\label{section:impacto:cenario-geral}
 
 Nessa seção, descrevemos os dados da base totalizados mensalmente de forma agregada.
 
@@ -46,13 +47,13 @@ Outubro &    3.33\% \\
 \fdadospesquisa
 \end{table}
 
-A Figura~\ref{fig:pandemia:base-de-dados-19.1-comparacao-valor-mensal-total} mostra uma comparação dos valores mensais transacionados em 2020 em relação aos valores mensais de 2019. Verifica-se então que os meses de abril e maio tiveram um valor total transacionado menor no ano de 2020, cuja variação está descritos em detalhes na Tabela~\ref{tab:comparacao-valor-mensal-total}.
+A Figura~\ref{fig:pandemia:base-de-dados-19.1-comparacao-valor-mensal-total} mostra uma comparação dos valores mensais transacionados em 2020 em relação aos valores mensais de 2019. Verifica-se então que os meses de abril e maio tiveram um valor total transacionado menor no ano de 2020, cuja variação por UF está descritos em detalhes na Tabela~\ref{tab:comparacao-valor-mensal-total}.
 
 Como descrito na Seção~\ref{introducao:pandemia}, os meses de março e abril marcam exatamente o início do isolamento e das quarentenas no Brasil, e a aparentemente o impacto econômico nesses momentos foi mais importante.
 
-Aplicando uma regressão linear a partir dos dados entre janeiro de 2019 e fevereiro de 2020 é possível obter uma da previsão de valor transacionado para os meses seguintes e então comparar com o valor obtido nos meses seguintes: A Figura~\ref{fig:pandemia:base-de-dados-18.2-valor-total-vs-previsao} mostra os valores obtidos em relação aos valores previstos, detalhados na Tabela~\ref{tab:pandemia:valor-total-vs-previsao}.
+Aplicando uma regressão linear a partir dos dados entre janeiro de 2019 e fevereiro de 2020 é possível obter uma da previsão de valor transacionado para os meses seguintes e então comparar com o valor obtido nos meses seguintes. Uma regressão linear não necessariamente é a melhor forma de prever o valor a ser transacionado para determinado mês, dados que os dados podem ter sazonalidades, porém se observarmos os dados da Figura~\ref{fig:pandemia:base-de-dados-18.1-valor-mensal-total}, podemos verificar uma tendência de crescimento linear mês a mês para os meses do ano de 2019. Isso não necessariamente ocorre porque houve um aumento real de transações das empresas envolvidas, mas porque a base de dados da empresa parceira tem crescido expressivamente mês a mês, com isso mesmo considerando o critério de recorrência, citado na seção~\ref{section:base-de-dados:dados-de-documentos-fiscais:preprocessamento}, a base de dados passa a receber mais dados de determinadas empresas, notoriamente aquelas que não são clientes da empresa parceira.
 
-A partir desses dados, é possível verificar que no período entre março e junho de 2020 o valor transacionado total foi menor que o previsto, verificando uma retomada posterior.
+A Figura~\ref{fig:pandemia:base-de-dados-18.2-valor-total-vs-previsao} mostra os valores obtidos em relação aos valores previstos a partir da regressão linear aplicada sobre os dados, cuja variação é detalhada na na Tabela~\ref{tab:pandemia:valor-total-vs-previsao}.
 
 \begin{figure}[htb]
 	\centering
@@ -84,7 +85,14 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+A partir desses dados, é possível verificar que no período entre março e junho de 2020 o valor transacionado total foi menor que o previsto, verificando uma retomada posterior. Notoriamente, no mês de abril houve uma diferença de cerca de 36\% entre o valor previsto e o valor real. Dada essa leitura, vamos considerar posteriormente para efeitos de comparação que o segundo trimestre de 2020 foi o mais afetado economicamente pela pandemia, mesmo que no mês de março haja também impacto não o consideraremos pois as medidas de isolamento e distanciamento foram aplicadas apenas ao fim deste mês e o impacto não foi suficiente para alterar significativamente os totais do primeiro trimestre de 2020.
+
+A partir de julho de 2020, o valor real transacionado foi maior que o valor previsto para esses meses. Isso pode indicar um menor impacto da pandemia para esses meses, e podemos observar na seção~\ref{introducao:pandemia} a partir da análise do índice de isolamento social que o isolamento social apesar de uma alta inicial em março e abril de 2020, começou a regredir a partir de julho de 2020, se mantendo estável após isso. Com isso, os níveis de consumo e produção possivelmente foram impactados positivamente com uma retomada, uma hipótese que ainda precisa ser mais lapidada uma vez que estamos analisando um período ainda limitado.
+
 \section{Cenário regional}
+\label{section:impacto:cenario-regional}
+
+Nesta seção, descrevemos o impacto econômico da pandemia do ponto de vista regional. Usamos aqui a definição de região utilizada na seção~\ref{section:base-de-dados:analise-descritiva:abrangencia-territorial}. A Figura~\ref{fig:pandemia:base-de-dados-11.1-valor-total-por-regiao} mostra o valor total transacionado por região entre janeiro de 2019 e outubro de 2020 na base de dados utilizada neste trabalho.
 
 \begin{figure}[htb]
 	\centering
@@ -94,6 +102,10 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+A região 4 (sudeste) possui um valor transacionado muito maior em comparação às outras regiões. Segundo comparação feita na seção~\ref{section:base-de-dados:analise-descritiva:abrangencia-territorial}, não há uma preferência territorial clara para empresas da região sudeste possuindo um percentual de participação semelhante à de outras regiões. Esta região é conhecida por sua alta participação no cenário econômico brasileiro.
+
+Na Figura~\ref{fig:pandemia:base-de-dados-21.1-valor-trimestral-por-regiao} é feita uma comparação trimestral entre o valor transacionado em cada um dos três primeiros trimestres de 2020 para cada região.
+
 \begin{figure}[htb]
 	\centering
     \caption{Valor trimestral transacionado por região no período analisado}
@@ -102,12 +114,15 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+Pode-se observar que todas as regiões tiveram um valor transacionado menor no segundo trimestre de 2020 em comparação aos outros dois trimestres analisados, o que indica um impacto econômico devido à crise causada pela pandemia, uma vez que os dados possuem uma tendência de crescimento no valor total transacionado, como argumentamos na seção~\ref{section:impacto:cenario-geral}.
+
+A Tabela~\ref{tab:pandemia:variacao-por-regiao} descreve a diferença entre os valores previstos a partir de uma regressão linear aplicada sobre os dados de janeiro de 2019 a fevereiro de 2020 e àqueles obtidos para cada região entre março e outubro de 2020, da mesma forma como descrito na seção~\ref{section:impacto:cenario-geral}. Também é apresentada na mesma tabela a variação entre o valor total previto e obtido entre os meses de março a outubro de 2020.
+
 \begin{table}[htb]
 \centering
 \caption{Diferença entre valores transacionados previstos e obtidos por região no período da pandemia}
 \label{tab:pandemia:variacao-por-regiao}
 \begin{subtable}[h]{\textwidth}
-    \label{tab:pandemia:variacao-mensal-por-regiao}
     \centering
     \begin{tabular}{c|r|r|r|r|r|r|r|r}
         \toprule
@@ -123,7 +138,6 @@ Outubro &    3.46\% \\ \hline
     \caption{Diferença entre valor mensal previsto e obtido}
 \end{subtable} ~ \\
 \begin{subtable}[h]{0.45\textwidth}
-    \label{tab:pandemia:variacao-total-por-regiao}
     \centering
     \begin{tabular}{l|r}
         \toprule
@@ -141,6 +155,9 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+Verfificamos novamente que os meses mais impactados foram aqueles relativos ao segundo trimestre de 2020, de abril a junho. A diferença para o mês de abril chegou a ser de cerca de 48\% para a região 1 (norte), o que representa um impacto bastante significativo. É possível observar também cerca resiliência da região 3 (centro-oeste), sendo que essa região não apontou impacto no mês de março e foi capaz de se recuperar mais rapidamente já apresentando resultados positivos para o mês de junho. Com exceção da região 3, todas as regiões tiveram uma diferença entre o valor total previsto e o obtido para o período de março a outubro de 2020.
+
+A Figura~\ref{fig:pandemia:base-de-dados-13-comparacao-valor-total-por-regiao} apresenta mês a mês o valor total transacionado em 2019 e 2020 para os meses de janeiro a outubro. Apesar da tendência de crescimento do valor transacionado mês a mês, o valor transacionado em abril e maio de 2020 foi menor que o valor transacionado em abril e maio de 2019 para todas as regiões.
 
 \begin{figure}[htb] 
     \centering 
@@ -174,6 +191,8 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+Na Figura~\ref{fig:pandemia:base-de-dados-14.1-valor-total-por-uf} vemos uma análise do valor total transacionado por UF no período de janeiro de 2019 e outubro de 2020. É possível observar um valor total transacionado consideravelmente maior no estado de São Paulo que, segundo descrição da seção~\ref{section:impacto:cenario-regional}, tem uma participação de 8\% do total das empresas deste estado, um percentual não muito diferente de outros estados citados. Outras UFs tem um valor total transacionado consideravelmente maior também, como Minas Gerais e Rio de Janeiro que reforçam a participação maior da região 4, e os estados da região 5 (sul): Paraná, Santa Catarina, e Rio Grande do Sul.
+
 \begin{figure}[htb]
 	\centering
     \caption{Valor total transacionado por UF no período analisado}
@@ -182,6 +201,8 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+A seguir, a Figura~\ref{fig:pandemia:base-de-dados-21.2-valor-trimestral-por-uf} apresenta graficamente uma comparação trimestral sobre o valor total transacionado em cada UF. Embora o valor total transacionado tenha grandes discrepâncias entre os estados, o que dificulta a identificação visual do impacto trimestral, é possível verificar que na maioria das UFs o valor total transacionado no segundo trimestre de 2020 é menor que no primeiro e no terceiro trimestre, o que indica um impacto maior devido à crise causada pela pandemia de COVID-19 nesse trimestre.
+
 \begin{figure}[htb]
 	\centering
     \caption{Valor trimestral transacionado por UF no período analisado}
@@ -189,6 +210,8 @@ Outubro &    3.46\% \\ \hline
     \label{fig:pandemia:base-de-dados-21.2-valor-trimestral-por-uf}
     \fdadospesquisa
 \end{figure}
+
+Os dados são então detalhados na Tabela~\ref{tab:pandemia:variacao-mensal-por-uf}, onde é apresentada a diferença entre o valor mensal transacionado previsto para cada UF utilizando uma regressão linear sobre os dados entre janeiro de 2019 e fevereiro de 2020 e o valor real obtido para cada mês seguinte, de março a outubro de 2020.
 
 \begin{table}[htb]
 \centering
@@ -231,6 +254,10 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+É possível observar que apenas o estado de Roraima não foi afetado pela crise segundo essa análise, mas como indicado na Tabela~\ref{tab:pandemia:variacao-mensal-por-uf} os dados desse estado não possuem um ruído considerável. Todos as outras UFs apresentaram pelo menos um mês cujo valor transacionado previsto e real indicam impacto negativo da crise. Os meses que concentram maior impacto novamente são os meses de março a junho, novamente indicando que o segundo de trimestre de 2020 foi o mais impactado pela pandemia.
+
+Na Tabela~\ref{tab:pandemia:variacao-total-por-uf} apresentamos a diferença entre o valor total previsto e obtido para o período de março a outubro de 2020.
+
 \begin{table}[htb]
 \centering
 \caption{Diferença entre valores totais transacionados previstos e obtidos por UF no período da pandemia}
@@ -271,6 +298,10 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+É possível verificar que dezoito UFs tiveram impacto no valor total transacionado em relação ao previsto, sendo os mais afetados o Rio Grande do Sul, o Rio de Janeiro, e o Amazonas. Nove UFs tiveram um valor previsto menor que o obtido, o que segundo esta análise significa que a retomada para estes estados pode ter compensado as perdas dos meses mais críticos.
+
+Na Tabela~\ref{tab:pandemia:impacto-por-uf} é descrita a quantidade de UFs impactada mensalmente e totalmente no período analisado. Consideramos aqui que o impacto mensal significa que pelo menos um mês teve um valor transacionado obtido 25\% menor que o valor previsto, e impacto total indica que o valor total obtido foi menor que o previsto.
+
 \begin{table}[htb]
 \centering
 \caption{Quantidade de UFs impactadas negativamente pela pandemia em relação às variações mensais ou totais}
@@ -286,7 +317,12 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
-\section{Cenário setorial}
+\section{Cenário econômico}
+\label{section:impacto:cenario-economico}
+
+Nesta seção, serão apresentados os resultados da análise de impacto da pandemia de COVID-19 na economia do ponto de vista setorial. Para isso, vamos usar o CNAE para segmentar a economia, como descrito na seção~\ref{section:base-de-dados:analise-descritiva:abrangencia-economica}.
+
+Na Figura~\ref{fig:pandemia:base-de-dados-15.1-valor-total-por-secao} é apresentado o volume transacionado por seção de CNAE considerando o total entre janeiro de 2019 e outubro de 2020.
 
 \begin{figure}[htb]
 	\centering
@@ -296,6 +332,10 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+A partir desses dados, podemos ver um volume muito maior transacionado nas seções C e G do CNAE, respectivamente as seções de "Indústria de Transformação" e "Comércio; Reparação de veículos automotores e motocicletas". Como pudemos ver na seção~\ref{section:base-de-dados:analise-descritiva:abrangencia-economica}, as seções C e G apresentam uma participação um pouco maior que as demais na base de dados, sendo que a seção G possui uma quantidade bastante grande de empresas também na base de referência em relação às demais, fato correspondido também aqui.
+
+Na Figura~\ref{fig:pandemia:base-de-dados-22-valor-trimestral-por-secao} repetimos a análise trimestral agora por seção, ilustrando os valores transacionados nos três primeiros trimestres de 2020 para cada seção. Como as seções C e G possuem volumes muito maiores, é difícil visualizar o impacto para todas as seções, mas podemos verificar a mesma tendência encontrada até aqui: o segundo trimestre de 2020 apresentou um impacto negativo em relação ao primeiro e ao terceiro trimestres, com acentuada queda o volume transacionado total.
+
 \begin{figure}[htb]
 	\centering
     \caption{Valor trimestral transacionado por seção no período analisado}
@@ -303,6 +343,8 @@ Outubro &    3.46\% \\ \hline
     \label{fig:pandemia:base-de-dados-22-valor-trimestral-por-secao}
     \fdadospesquisa
 \end{figure}
+
+Na Tabela~\ref{tab:pandemia:variacao-mensal-por-secao} é descrito em detalhes a diferença entre o valor previsto via regressão linear aplicada aos dados de valor mensal transacionado entre janeiro de 2019 a fevereiro de 2020 para os meses de março a outubro de 2020 e o valor obtido nesses meses.
 
 \begin{table}[htb]
 \centering
@@ -337,6 +379,10 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+Podemos verificar que a maior parte do impacto na maioria das seções da economia se dá entre março e junho de 2020, com perdas significativas registradas neste período para várias seções. Ao contrário de outras análises até aqui, podemos verificar que algumas seções da economia foram pouco impactadas e apresentaram resultados positivos no período estudado. A seção B, de indústrias extrativas, apresentou resultados positivos em todo o período estudado. Outras seções apresentaram um impacto negativo estendido para todos os meses, sendo estas as seções D, F, H, L, P, R, e T.
+
+A Tabela~\ref{tab:pandemia:variacao-total-por-secao} apresenta a diferença entre o valor total previsto e obtido para o período estudado. As seçõs B e O, respectivamente referentes a Indústrias Extrativas e Administração pública, foram aquelas em que o impacto foi positivo, obtendo um valor maior que o previsto, enquanto outras seções foram severamente impactadas, como L, R, T, respectivamente referentes a Atividades Imobiliárias, Artes, Cultura e Esporte, e Serviços Domésticos.
+
 \begin{table}[htb]
 \centering
 \caption{Diferença entre valores totais transacionados previstos e obtidos por seção no período da pandemia}
@@ -370,6 +416,8 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+A Tabela~\ref{tab:pandemia:impacto-por-secao} apresenta a consolidação da categorização de seções quanto ao impacto mensal e total. Novamente, impacto mensal se refere às seções cujo o valor obtido foi 25\% menor que o previsto para pelo menos um mês da pandemia, e impacto total se o valor total obtido para o período foi menor que o previsto.
+
 \begin{table}[htb]
 \centering
 \caption{Quantidade de seções impactadas negativamente pela pandemia em relação às variações mensais ou totais}
@@ -385,6 +433,8 @@ Outubro &    3.46\% \\ \hline
 \fdadospesquisa
 \end{table}
 
+A Figura~\ref{fig:pandemia:base-de-dados-23.1-valor-total-por-cnae} estende a análise para um estudo do impacto por CNAE. Ela apresenta um diargama de caixas dos valores mensais transacionados por CNAE entre janeiro de 2019 e outubro de 2020.
+
 \begin{figure}[htb]
 	\centering
     \caption{Histograma do valor total transacionado por CNAE no período analisado}
@@ -393,6 +443,8 @@ Outubro &    3.46\% \\ \hline
     \fdadospesquisa
 \end{figure}
 
+Os dados de valores transacionados por CNAE tem grande variância, o que dificulta uma análise, mas é possível ver através do histograma que novamente os meses de abril e maio possuem uma distribuição de valores ligeiramente menor que o restante, mantendo o padrão anterior.
+
 \begin{figure}[htb]
 	\centering
     \caption{Diagrama de caixa dos valores mensais transacionados por CNAE no período analisado}
@@ -400,6 +452,8 @@ Outubro &    3.46\% \\ \hline
     \label{fig:pandemia:base-de-dados-23.2-valor-mensal-por-cnae}
     \fdadospesquisa
 \end{figure}
+
+Sobre os dados de CNAE também foi aplicada uma regressão linear sobre os dados obtidos nos meses de janeiro de 2019 a fevereiro de 2020 para a previsão dos valores para os meses de março de a outubro de 2020. Da mesma forma, a Tabela~\ref{tab:pandemia:impacto-por-cnae} mostra uma categorização de impacto mensal e total para CNAEs usando os mesmos critérios apresentados anteriormente: é considerado impacto mensal aquele onde para um determinado mês o valor obtido é 25\% menor que o valor previsto, e impacto total se o valor total obtido é menor que o previsto.
 
 \begin{table}[htb]
 \centering
@@ -415,3 +469,10 @@ Outubro &    3.46\% \\ \hline
     \end{tabular}
 \fdadospesquisa
 \end{table}
+
+\section{Conclusões}
+\label{section:impacto:conclusoes}
+
+Finalizamos então a análise de impacto para diferentes segmentações, e pudemos verificar que em todos os cenários houve algum impacto entre os valores previstos e obtidos. Foi apresentada uma análise comparativa entre 2019 e 2020, e uma análise usando uma previsão de valor transacionado e valor real obtido. O impacto foi mais localizado entre os meses de março e junho, tornando o segundo trimestre de 2020 o mais afetado.
+
+Cada cenário possui proporções diferentes de entidades afetadas e não afetadas pela pandemia, com um desbalanceamento maior para entidades afetadas. O objetivo, portanto, foi apresentar uma categorização das entidades ao mesmo tempo que aprofundamos a análise do Capítulo~\ref{chapter:base-de-dados} para mostrar sob o ponto de vista de valores transacionados uma nova perspectiva dos dados aqui apresentados.

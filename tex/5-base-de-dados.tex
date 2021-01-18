@@ -2,13 +2,14 @@
 Neste capítulo, serão descritos os conjuntos de dados utilizados neste trabalho, bem como os processos de extração e transformação envolvidos.
 
 \section{Dados de Documentos Fiscais}
-\label{section:dados-de-documentos-fiscais}
+\label{section:base-de-dados:dados-de-documentos-fiscais}
 
 Nesta seção, será apresentado o tratamento dos dados obtidos através da coleta de documentos fiscais.
 
 \subsection{Aquisição}
+\label{section:base-de-dados:dados-de-documentos-fiscais:aquisicao}
 
-Como descrito na Seção~\ref{section:arquivei}, os dados utilizados neste trabalho são obtidos através do armazém de dados da empresa parceira. Estes dados passam por um complexo processo de ingestão e tratamento descrito em detalhes no Apêndice~\ref{chapter:armazem-de-dados}.
+Como descrito na Seção~\ref{section:documentos-fiscais:arquivei}, os dados utilizados neste trabalho são obtidos através do armazém de dados da empresa parceira. Estes dados passam por um complexo processo de ingestão e tratamento descrito em detalhes no Apêndice~\ref{chapter:armazem-de-dados}.
 
 A seleção dos dados foi feita usando o armazém de dados, através da linguagem \sigla{SQL}{\textit{Structured Query Language}}. Os critérios de seleção utilizados para obter os dados do armazém de dados foram:
 
@@ -49,6 +50,7 @@ Cada linha do conjunto de dados possui dados de uma transação entre duas empre
 Todos os dados obtidos a partir do armazém de dados foram anonimizados. Dados identificadores ou sensíveis foram removidos e reindexados de forma a manter o sigilo e privacidade de tais dados respeitando tanto a legislação atual quanto os contratos de prestação de serviços da empresa parceira.
 
 \subsection{Pré-processamento}
+\label{section:base-de-dados:dados-de-documentos-fiscais:preprocessamento}
 
 Para cada documento foi criada uma nova coluna com o valor bruto agregado dos produtos transacionados, respeitando os critérios de CFOP e sendo eliminados os documentos de valor zero (o que é possível devido a inconsistências durante a emissão do documento).
 
@@ -67,13 +69,14 @@ Cada um dos três conjuntos de dados agrega informações das transações efetu
 Uma nova coluna foi criada contendo a quantidade de transações mensal entre cada entidade. Foi considerado que cada NF-e documenta uma única transação independente da quantidade de produtos envolvida.
 
 \section{Dados Abertos de Empresas Brasileiras}
-\label{section:dados-abertos-receita}
+\label{section:base-de-dados:dados-abertos}
 
 Nesta seção, será apresentado o tratamento dos dados obtidos através da base de dados abertos da Receita Federal.
 
 \subsection{Aquisição}
+\label{section:base-de-dados:dados-abertos:aquisicao}
 
-Além dos dados descritos na Seção~\ref{section:dados-de-documentos-fiscais}, foram utilizados também dados coletados das bases de dados abertas sobre o Cadastro Nacional de Pessoas Jurídicas da Receita Federal \cite{receita:dados-publicos:cnpj}.
+Além dos dados descritos na Seção~\ref{section:base-de-dados:dados-de-documentos-fiscais}, foram utilizados também dados coletados das bases de dados abertas sobre o Cadastro Nacional de Pessoas Jurídicas da Receita Federal \cite{receita:dados-publicos:cnpj}.
 
 Tais dados são divulgados conforme previsto no Artigo 5º da Constituição Federal \cite{constituicao:1988}:
 
@@ -123,17 +126,19 @@ OpcaoMei            & STRING       & Indicador da existência da opção pelo ME
 \end{tabularx}
 \end{quadro}
 
-Através do número de inscrição das empresas foi possível cruzar os dados obtidos nesta base de dados com a base de dados descrita na Seção~\ref{section:dados-de-documentos-fiscais}, o que foi feito antes de todo o processo de anonimização citado nessa seção.
+Através do número de inscrição das empresas foi possível cruzar os dados obtidos nesta base de dados com a base de dados descrita na Seção~\ref{section:base-de-dados:dados-de-documentos-fiscais}, o que foi feito antes de todo o processo de anonimização citado nessa seção.
 
 \section{Análise Descritiva da Base de Dados}
+\label{section:base-de-dados:analise-descritiva}
 
 Nesta seção, será apresentada uma análise descritiva dos dados utilizados neste trabalho, descrevendo os dados coletados de documentos fiscais e comparando sua abrangência com os dados obtidos da base de dados aberta da Receita Federal.
 
 \subsection{Abrangência territorial}
+\label{section:base-de-dados:analise-descritiva:abrangencia-territorial}
 
-Nesta subseção, será apresentada a análise descritiva do ponto de vista territorial. Será descrita a participação das empresas citadas na base de dados em relação aos totais de cada divisão territorial brasileira a partir dos dados descritos na Seção~\ref{section:dados-abertos-receita}.
+Nesta subseção, será apresentada a análise descritiva do ponto de vista territorial. Será descrita a participação das empresas citadas na base de dados em relação aos totais de cada divisão territorial brasileira a partir dos dados descritos na Seção~\ref{section:base-de-dados:dados-abertos}.
 
-O \sigla{IBGE}{Instituto Brasileiro de Geografia e Estatística} criou a \sigla{DTB}{Divisão Territorial Brasileira}, uma codificação hierárquica de sete dígitos do território brasileiro onde:
+O IBGE criou a \sigla{DTB}{Divisão Territorial Brasileira}, uma codificação hierárquica de sete dígitos do território brasileiro onde:
 
 \begin{itemize}
     \item O primeiro dígito indica a região
@@ -326,8 +331,9 @@ Máximo        &   21.230\% \\
 Assim, pode-se observar uma forte participação territorial dos dados tanto observando do ponto de vista regional como também estadual e municipal, estando presentes nas mais diversas realidades brasileiras.
 
 \subsection{Abrangência econômica}
+\label{section:base-de-dados:analise-descritiva:abrangencia-economica}
 
-Os dados descritos na Seção~\ref{section:dados-abertos-receita} apresentam uma série de informações e classificações das empresas que podem ser utilizadas para ter uma melhor noção do porte e dos tipos de empresas envolvidas. Nesta subseção, será apresentada a análise descritiva do ponto de vista econômico em relação aos totais coletados daquela base.
+Os dados descritos na Seção~\ref{section:base-de-dados:dados-abertos} apresentam uma série de informações e classificações das empresas que podem ser utilizadas para ter uma melhor noção do porte e dos tipos de empresas envolvidas. Nesta subseção, será apresentada a análise descritiva do ponto de vista econômico em relação aos totais coletados daquela base.
 
 A primeira classificação que vamos considerar para esta análise é o \textbf{porte} de uma empresa. Regulada pela Lei nº 5172/1966 ~\cite{lei:5172:codigo-tributario}, que em seu Artigo 3º define:
 
@@ -481,7 +487,7 @@ Optante      &    0.1450 \\
 
 \subsection{Abrangência setorial}
 
-Nesta Seção, será feita a análise comparativa dos dados presentes na base de dados de documentos fiscais em relação aos dados abertos descritos na Seção~\ref{section:dados-abertos-receita} visando descrever a participação em relação aos setores econômicos da economia brasileira.
+Nesta Seção, será feita a análise comparativa dos dados presentes na base de dados de documentos fiscais em relação aos dados abertos descritos na Seção~\ref{section:base-de-dados:dados-abertos} visando descrever a participação em relação aos setores econômicos da economia brasileira.
 
 Como citado no Capítulo~\ref{chapter:documenos-fiscais}, através dos protocolos do ENAT foi feito o compromisso para a unificação do Cadastro Nacional de Atividades Econômicas (CNAE). Esse cadastro foi implementado então pela Resolução IBGE/CONCLA \sigla*{CONCLA}{Comissão Nacional de Classificação} nº 01 de 04 de setembro de 2006 \cite{resolucao-concla:01:cnae} e Resolução IBGE/CONCLA nº nº 02, de 15 de dezembro de 2006 \cite{resolucao-concla:02:cnae}. Como descrito no Art. 1º da Resolução nº 01, essa classificação é hierárquica:
 
@@ -630,3 +636,9 @@ Máximo        &   90.909\% \\
 \end{tabular}
 \fdadospesquisa
 \end{table}
+
+\section{Conclusões}
+
+Neste capítulo, pudemos observar como os dados da base de dados de documentos fiscais utilizada neste trabalho se compara à base de dados aberta de empresas brasileiras. Do ponto de vista territorial, pudemos observar que há uma distribuição consideravelmente balanceada nos dados, não havendo grande preferência regional. Na análise de abrangência econômica, foi possível ver que existe certo viés para empresas de menor porte, com uma participação maior de MEs e EPPs em relação às Demais, o que reflete também a participação no Simples Nacional, uma tipificação típica de empresas de menor porte. Por fim, analisando a participação da base de dados em relação às seções da economia brasileira, pudemos observar que existe alguma variância entre as diversas seções de CNAE, e também entre todos os CNAEs.
+
+Com isso, concluímos que os dados possuem algum viés e não são perfeitamente balanceados conforme a totalidade dos dados. Além disso, esta análise possui suas limitações, uma vez que não sabemos exatamente o volume de documentos nem de valores transacionados para cada tipo de empresa. O objetivo dessa análise foi tornar mais explícito a perspectiva que os dados apresentam acerca da totalidade dos dados da economia brasileira. Sob essa perspectiva faremos às análises seguintes, que são aplicadas sobre uma amostra dos dados totais, que pudemos ver que é significativa e razoavelmente balanceada segundo as segmentações que utilizamos.
