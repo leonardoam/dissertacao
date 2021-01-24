@@ -30,14 +30,14 @@
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
 % Tanto na capa quanto nas folhas de rosto apenas a primeira letra da primeira palavra (ou nomes próprios) devem estar em letra maiúscula, todas as demais devem ser em letra minúscula.
-\tituloPT{Estudo do impacto econômico de uma pandemia utilizando dados de Documentos Fiscais}
-\tituloEN{Study of the economic impact of a pandemic using Invoices}
+\tituloPT{Estudo do impacto econômico da pandemia de COVID-19 através de dados de Documentos Fiscais}
+\tituloEN{Study of the economic impact of COVID-19 pandemic using Invoices data}
 \autor[Miguel, L. A.]{Leonardo Alves Miguel}
 \genero{M} % Gênero do autor (M = Masculino / F = Feminino)
 \orientador[Orientador]{Prof. Dr.}{Francisco Aparecido Rodrigues}
 %\coorientador{Prof. Dr.}{Fulano de Tal}
 \curso{MECAI}
-\data{28}{01}{2021} % Data do depósito
+\data{25}{01}{2021} % Data do depósito
 \idioma{PT} % Idioma principal do documento (PT = português / EN = inglês)
 % ---
 
@@ -50,16 +50,16 @@
 % conter no máximo 500 palavras
 % conter no mínimo 1 e no máximo 5 palavras-chave
 \textoresumo[brazil]{
-    Um resumo
-    }{Algumas, palavras, chave}
+    A crise mais grave em pelo menos um século trouxe uma série de consequências para a saúde, política, e economia brasileira. O termo "novo normal" é cada vez mais comum no vocabulário das pessoas, e os efeitos desse evento serão sentidos ainda por muitos anos. Neste trabalho, utilizamos dados adquiridos através do processamento de documentos fiscais para analisar o impacto econômico da crise causada pela pandemia de COVID-19 em uma amostra da economia brasileira, utilizando uma modelagem em Redes Complexas e Aprendizado de Máquina. O objetivo é utilizar dados de empresas, utilizados burocraticamente para cumprir obrigações fiscais e contábeis, para tirar conclusões sobre este evento.
+    }{Análise Exploratória, Redes Complexas, Crise Econômica, Aprendizado de Máquina}
 
 
 % resumo em INGLÊS
 % conter no máximo 500 palavras
 % conter no mínimo 1 e no máximo 5 palavras-chave
 \textoresumo[english]{
-    A abstract
-    }{Some, keywords}
+    The most severe crisis in at least a century brought a series of consequences to brazilian health, politics, and economy. The expression "new normal" is increasingly common in the people's mouth and the effects of this event will be felt for many years to come. In this work, we used data acquired through processing invoices to analyze the economic impact of the COVID-19 pandemic in a sample of the brazilian economy using Complex Networks modelling and Machine Learning. We intend to use enterprise data usually processed for accounting and tax obligations to get useful insights about this event.
+    }{Exploratory Analysis, Complex Networks, Economic Crisis, Machine Learning}
 
 
 % ----------------------------------------------------------
@@ -84,7 +84,7 @@
 \incluilistadequadros
 
 % Inclui a lista de algoritmos
-\incluilistadealgoritmos
+% \incluilistadealgoritmos
 
 % Inclui a lista de códigos
 \incluilistadecodigos
@@ -93,7 +93,7 @@
 \incluilistadesiglas
 
 % Inclui a lista de símbolos
-\incluilistadesimbolos
+% \incluilistadesimbolos
 
 % Dependências inseridas pelo autor
 \usepackage{multirow}
@@ -115,9 +115,9 @@
 \label{chapter:documenos-fiscais}
 \input{tex/2-documentos-fiscais}
 
-\chapter{Redes Complexas}
-\label{chapter:redes}
-\input{tex/4-redes}
+\chapter{Metodologia}
+\label{chapter:metodologia}
+\input{tex/4-metodologia}
 
 \chapter{Base de Dados}
 \label{chapter:base-de-dados}
@@ -179,28 +179,11 @@
     \label{chapter:tecnologias-utilizadas}
     \input{tex/appendix/b-tecnologias-utilizadas}
     
-    \chapter{CFOP - Código Financeiro de Operações}
-    \label{chapter:cfop}
-    \input{tex/appendix/c-cfop}
+    \chapter{Exemplo de Nota Fiscal Eletrônica}
+    \label{chapter:nfe}
+    \input{tex/appendix/d-exemplo-nfe}
 
 \end{apendicesenv}
-% ---
-
-
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Inicia os anexos
-% ---
-\begin{anexosenv}
-
-    \chapter{Trabalhos Relacionados Relevantes}
-    \label{chapter:trabalhos-relevantes}
-    \input{tex/annex/a-trabalhos-relevantes}
-
-\end{anexosenv}
 % ---
 
 \end{document}

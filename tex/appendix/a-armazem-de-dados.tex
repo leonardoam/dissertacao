@@ -1,4 +1,33 @@
 
-descricao da arquitetura do data warehouse da arquivei
+Neste apêndice, será descrito parte da arquitetura de ingestão de documentos fiscais utilizado pela empresa parceira.
 
-dfes e dados abertos
+\section{Arquitetura de Ingestão}
+
+A Arquivei, empresa parceira deste trabalho, possui em sua plataforma diversos fluxos de ingestão de documentos fiscais. O usuário pode fazer o upload de documentos por diversos meios, sendo eles:
+
+\begin{itemize}
+    \item Upload via plataforma \textit{web}
+    \item Upload de arquivos zip via plataforma \textit{web}
+    \item Envio por email
+    \item Através do Sincroniza Notas, um produto instalável que faz integrações com ERPs e outros sistemas contábeis
+    \item Através de consulta automatizada utilizando certificado digital A1
+    \item Através do Modulo de Segurança da Arquivei que utiliza uma integração \textit{web} para fazer a consulta via certificado digital A3
+\end{itemize}
+
+O fluxo de consulta automatizada é especialmente importante porque é por este fluxo que são recebidos os documentos vindos da Secretaria da Fazenda. O sistema de consulta lida de forma eficiente com os \textit{web services} de forma a garantir que o cliente tenha acesso a todas as informações disponíveis, da forma mais consistente possível. Estes documentos possuem um grau de confiabilidade maior em relação aos demais, uma vez que os documentos recebidos através dos clientes podem ter inconsistências ou incompletudes por problemas de comunicação e integração. Essas inconsistências podem apresentar ruídos em análises de dados, uma vez que nem todas as informações disponíveis no documento fiscal são checadas pela Secretaria da Fazenda e as alterações dos mesmos ocorrem através de documentos específicos, chamadas Cartas de Correção, que são de difícil processamento.
+
+Todos esses fluxos passam por um fluxo centralizado de tratamento de dados, que garante certa consistência e integridade. Os documentos coletados são então enviados a um sistema chamado Plataforma de Documentos Fiscais, descrito a seguir.
+
+\section{Plataforma de DFe}
+
+A Plataforma de Documentos Fiscais é o sistema responsável por armazenar os documentos de forma segura, consistente, e disponível. Esta plataforma usa o conceito de Fonte Única de Verdade para construir um conjunto de sistemas responsável por tratar os dados de documentos fiscais de forma centralizada e consistente.
+
+A plataforma disponibiliza uma série de APIs para ingestão síncrona, ingestão assíncrona, e disponibilização dos dados. Os clientes da plataforma são times internos da Arquivei, responsáveis por construir diferentes produtos, que se usam das funcionalidades da mesma para agilizar e melhorar suas entregas.
+
+\section{Armazém de Dados}
+
+Uma das interfaces da Plataforma de DFe é um protocolo de replicação de dados chamado Change Data Capture (CDC), em tradução livre Captura de Modificações de Dados, que é um protocolo capaz de transmitir mudanças feitas em um banco de dados para sistemas externos de forma a possibilitar a geração de visualizações.
+
+Visualizações são bancos de dados de propósito específico criados a partir de uma Fonte Única de Verdade, visando atender demandas específicas. Uma empresa pode escolher ter visualizações analíticas, visualizações de índice-invertido, ou visualizações transacionais, por exemplo. Cada visualização irá disponibilizar os dados através de um novo protocolo ou de uma nova modelagem, conforme as demandas da empresa ou organização.
+
+Uma visualização utilizada são armazéns de dados. O armazém de dados da Arquivei é construído a partir do CDC visando disponibilizar os dados da base de dados para análise. Através do armazém de dados de documentos fiscais foi possível obter os dados para este trabalho. O armazém também armazena dados coletados de base de dados externas que tenham alguma interação com os dados transacionais ou de documentos fiscais.
